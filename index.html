@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Festival 10.0</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand";
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(ISOLA.JPG); /* Background image */
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+        }
+
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px 50px;
+            border-radius: 10px;
+;
+        }
+
+        header .logo {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #FF9100;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+            color: #FF9100;
+
+        }
+
+        .links-section h2 {
+            font-size: 1rem;
+            margin: 25px 0 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: black;
+        }
+
+        .link-button {
+            display: block;
+            background-color:#F7EFE5;
+            color: black;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 30px; /* Rounded corners */
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-2px); }
+            40% { transform: translateX(2px); }
+            60% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+
+        .link-button:hover {
+            background-color:#FF9100;
+            animation: vibrate 0.3s linear;
+        }
+
+        .contact-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .contact-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color:#FF9100 ;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: black;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .contact-form button {
+            background-color:#F7EFE5  ;
+            color: black;
+            border: none;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #FF9100;
+        }
+
+        /* Modal styles */
+        /* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-header {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+}
+.modal-header h2 {
+    color: #FF9100;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color:  #FF9100;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px 0;
+    font-size: 1rem;
+    color: black; /* Ensure text is readable */
+}
+
+.modal-footer {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.modal-footer button {
+    background-color: #20B2AA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-footer button:hover {
+    background-color: rgba(0, 150, 136, 1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="IMG_1682.PNG" alt="Physics Festival 10.0" class="logo">
+            <h1>PHYSICS FESTIVAL 10.0</h1>
+            <p>HIMPUNAN MAHASISWA FISIKA (HMF) FPMIPA UPI</p>
+        </header>
+
+        <section class="links-section">
+            <h2>Open Registration Perlombaan Nasional Physics Festival 10.0</h2>
+            <a href="https://bit.ly/Turnamen_Fisika_Phyfest2024" class="link-button">Turnamen Fisika</a>
+            <a href="https://bit.ly/Physics_Innovators_Competition_Phyfest2024" class="link-button">Physics Kit</a>
+            <a href="https://bit.ly/Debat_Fisika_Phyfest2024" class="link-button">Debat Fisika</a>
+             <a href="https://bit.ly/LombaKTIPhyfest2024" class="link-button">Karya Tulis Ilmiah</a>
+
+            <h2>Buku Panduan Perlombaan Nasional Physics Festival 10.0</h2>
+            <a href="#turnamen-fisika" class="link-button">Turnamen Fisika</a>
+            <a href="#physics-kit" class="link-button">Physics Kit</a>
+            <a href="#debat-fisika" class="link-button">Debat Fisika</a>
+            <a href="#debat-fisika" class="link-button">Karya Tulis Ilmiah</a>
+
+            <h2>Physics Kit Phyfest 10.0</h2>
+            <a href="#voting-physics-kit" class="link-button">Voting Karya Physics Kit 10.0</a>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2 align="center">Hubungi Kami</h2>
+            <form id="contactForm">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name"  placeholder="Nama Lengkap">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email Anda" required>
+
+                <label for="subject">Subjek:</label>
+                <input type="text" id="subject" name="subject" placeholder="Subjek" required>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Silakan Ketikkan Pesan Anda" required></textarea>
+
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h2>Berhasil</h2>
+            </div>
+            <div class="modal-body">
+                <p>Terima Kasih! Pesan Anda telah terkirim</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <script>
+        // Get the modal and its close elements
+        var modal = document.getElementById("myModal");
+        var closeButtons = document.querySelectorAll(".modal-close");
+        var form = document.getElementById("contactForm");
+
+        // Function to show the modal
+        function showModal() {
+            modal.style.display = "block";
+        }
+
+        // Function to hide the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // When the user submits the form
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+            showModal(); // Show the modal
+            form.reset(); // Optionally reset the form fields
+        });
+
+        // Close the modal when the user clicks on <span> (x)
+        closeButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                closeModal();
+            });
+        });
+
+        // Close the modal when the user clicks on the close button inside the modal
+        var modalCloseButton = document.querySelector(".modal-footer button");
+        modalCloseButton.addEventListener("click", function() {
+            closeModal();
+        });
+
+        // Optionally, close the modal when the user clicks outside of the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+-->
+
+<script>
+    // Get the modal and its close elements
+    var modal = document.getElementById("myModal");
+    var closeButtons = document.querySelectorAll(".modal-close");
+    var form = document.getElementById("contactForm");
+
+    // Function to show the modal
+    function showModal() {
+        modal.style.display = "block";
+    }
+
+    // Function to hide the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Function to send the WhatsApp message
+    function sendWhatsApp() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+
+        var whatsappUrl = "https://wa.me/6289656490154?text=" 
+            + "Nama: " + encodeURIComponent(name) + "%0a"
+            + "Email: " + encodeURIComponent(email) + "%0a"
+            + "Subjek: " + encodeURIComponent(subject) + "%0a"
+            + "Pesan: " + encodeURIComponent(message);
+
+        window.open(whatsappUrl, '_blank').focus();
+
+        showModal(); // Show the modal after sending the message
+        form.reset(); // Optionally reset the form fields
+    }
+
+    // When the user submits the form
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+        sendWhatsApp(); // Send the WhatsApp message and show the modal
+    });
+
+    // Close the modal when the user clicks on <span> (x)
+    closeButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            closeModal();
+        });
+    });
+
+    // Optionally, close the modal when the user clicks outside of the modal content
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
